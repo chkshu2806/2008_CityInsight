@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+
+    .navbar a {
+      float: right;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #555;
+    }
+
+    .content {
+      padding: 20px;
+      margin-bottom: 80px;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styling for the footer text */
+    .footer-text {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px;
+    }
+
+    /* Additional styles for Contact Us */
+    .contact-info {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-heading {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .contact-text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Additional styles for Dropdown Menu */
+    .dropdown {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .dropdown select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .category-info {
+      margin-top: 20px;
+      font-size: 16px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#contact">Contact Us</a>
+  <a href="complaints.html">Complaints</a>
+  <a href="tax.html">Tax Distribution</a>
+  <a href="about.html">About Us</a>
+  <a href="index.html">Home</a>
+</div>
+
+<div class="content">
+  <div class="contact-info">
+    <h1 class="contact-heading">Contact Us</h1>
+    <p class="contact-text">We're here to assist you. If you have any questions, suggestions, or feedback, feel free to get in touch with our team.</p>
+    
+    <div class="dropdown">
+      <label for="category">Select a Category:</label>
+      <select id="category">
+        <option value="" selected disabled>Select a category</option>
+        <option value="women_child">Women and Child</option>
+        <option value="administration">Administration</option>
+        <option value="railway">Railway</option>
+        <option value="medical">Medical</option>
+        <option value="disaster">Disaster</option>
+      </select>
+    </div>
+
+    <div class="category-info" id="categoryInfo">
+      <!-- Category-specific information will be displayed here -->
+    </div>
+    
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-text">Connect with us:</div>
+  <a href="about.html">About Us</a>
+  <a href="tax.html">Tax Distribution</a>
+  <a href="complaints.html">Complaints</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<script>
+  const categorySelect = document.getElementById('category');
+  const categoryInfo = document.getElementById('categoryInfo');
+
+  categorySelect.addEventListener('change', function () {
+  const selectedCategory = categorySelect.value;
+
+  let info = '';
+  switch (selectedCategory) {
+    case 'women_child':
+      info = 'Child Abuse Hotline 1098<br>'
+           + 'Women Helpline 1091<br>'
+           + 'Women Helpline (Domestic) 181';
+      break;
+    case 'administration':
+      info = 'Aadhar Card (UIDAI) 1947<br>'
+           + 'Election Commission of India 1950<br>'
+           + 'National Consumer Helpline 1800-11-4000';
+      break;
+    case 'railway':
+      info = 'Railway Enquiry 139<br>'
+           + 'Indian Railway General Enquiry 131<br>'
+           + 'Train Accident 1011';
+      break;
+    case 'medical':
+      info = 'Ambulance 102<br>'
+           + 'Ambulance Help Line 108<br>'
+           + 'Aids Helpline 1097';
+      break;
+    case 'disaster':
+      info = 'National Emergency Number 112<br>'
+           + 'Disaster Management / Medical Helpline 109<br>'
+           + 'Anti Poison    1069';
+      break;
+    default:
+      info = '';
+  }
+
+  categoryInfo.innerHTML = info;
+  categoryInfo.style.display = info ? 'block' : 'none'; // Display the info if not empty
+}); // Display the info if not empty
+  
+</script>
+
+</body>
+</html>
